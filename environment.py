@@ -1,9 +1,19 @@
 from selenium import webdriver
+from behave import fixture
 
 
-def before_all(context):
+@fixture
+def before_scenario(context, scenario):
+    """
+    Loads up chrome driver before each scenario.
+    """
+    
     context.driver = webdriver.Chrome()
 
-
-def after_all(context):
+@fixture
+def after_scenario(context, scenario):
+    """
+    Quits chrome criver after each scenario.
+    """
+    
     context.driver.quit()
