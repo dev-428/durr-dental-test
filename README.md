@@ -34,7 +34,7 @@ Provides AI-assisted development features.
 
 # Setup
 
-### 1. ChromeDriver Download and add to PATH
+### 1. ChromeDriver Download & Add To PATH
 reference: https://stackoverflow.com/a/38087347
 
 Check what is your current Chrome version in settings and download the correct version [here](https://googlechromelabs.github.io/chrome-for-testing/).
@@ -48,7 +48,7 @@ $ mv chromedriver-mac-arm64/chromedriver $HOME/bin
 $ echo "export PATH=$PATH:$HOME/bin" >> $HOME/.zshrc
 ```
 
-### 2. Install, create & activate virtual environment
+### 2. Install, Create & Activate Virtual Environment
 
 Run following commands in terminal: 
 
@@ -58,23 +58,27 @@ Run following commands in terminal:
 
 `source .venv/bin/activate`
 
-### 3. Install pip requirements
+### 3. Install pip Requirements
 
 Run following command in terminal:
 
 `pip install -r requirements.txt`
 
-### 3. Install Behave
+### 4. Install Behave
 
 Run following command in terminal:
 
 `pip install behave`
 
-### 3. Install Selenium
+### 5. Install Selenium
 
 Run following command in terminal:
 
 `pip install selenium`
+
+### 6. Fill Email & Password
+
+Navigate to `behave.ini` and copy paste your email & password in their respective fields.
 
 # Common Errors Faced & Solutions
 
