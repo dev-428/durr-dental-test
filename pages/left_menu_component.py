@@ -9,7 +9,7 @@ PRODUCT_SEARCH_LEFT_MENU_BUTTON_LOCATOR = "(//span[contains(text(), 'Product sea
 SAVED_DOCUMENTS_LEFT_MENU_BUTTON_LOCATOR = "(//span[contains(text(), 'Saved documents')])[2]"
 PRODUCT_REGISTRATION_LEFT_MENU_BUTTON_LOCATOR = "(//span[contains(text(), 'Product registration 2+1')])[2]"
 SETTINGS_LEFT_MENU_BUTTON_LOCATOR = "(//span[contains(text(), 'Settings')])[2]"
-USER_NAVIGATION_BUTTON_LOCATOR = "(//div[@aria-label='nav-user-button'])[2]"
+USER_PROFILE_BUTTON_LOCATOR = "(//div[@aria-label='nav-user-button'])[2]"
 
 
 class LeftMenuComponent():
@@ -31,7 +31,7 @@ class LeftMenuComponent():
         self.helper.confirm_presence_of_element_by_xpath(SAVED_DOCUMENTS_LEFT_MENU_BUTTON_LOCATOR)
         self.helper.confirm_presence_of_element_by_xpath(PRODUCT_REGISTRATION_LEFT_MENU_BUTTON_LOCATOR)
         self.helper.confirm_presence_of_element_by_xpath(SETTINGS_LEFT_MENU_BUTTON_LOCATOR)
-        self.helper.confirm_presence_of_element_by_xpath(USER_NAVIGATION_BUTTON_LOCATOR) 
+        self.helper.confirm_presence_of_element_by_xpath(USER_PROFILE_BUTTON_LOCATOR) 
 
     def click_dashboard_button(self) -> None:
         """
@@ -82,11 +82,11 @@ class LeftMenuComponent():
 
         self.helper.click_element(SETTINGS_LEFT_MENU_BUTTON_LOCATOR)
 
-    def click_user_navigation_button(self) -> None:
+    def click_user_profile_button(self) -> None:
         """
         Clicks the "User Navigation" button of the left menu.
         
         This is located all the way at the bottom with username and email. 
         """
 
-        self.helper.click_element(USER_NAVIGATION_BUTTON_LOCATOR)
+        self.helper.click_element(USER_PROFILE_BUTTON_LOCATOR)

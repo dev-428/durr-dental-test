@@ -14,6 +14,19 @@ class SeleniumHelper:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, WEB_DRIVER_WAIT_TIMEOUT)
 
+    def confirm_url_to_be(self, expected_url: str) -> None:
+        """
+        Waits for the current page url to match the expected url.
+
+        Args:
+            expected_url: The url you expect the current page to have.
+        
+        Returns:
+            None
+        """
+
+        self.wait.until(EC.url_to_be(expected_url))
+
     def confirm_presence_of_element_by_xpath(self, locator: str) -> WebElement:
         """
         Waits for the presence of a web element on the page using an XPATH locator.
@@ -54,6 +67,22 @@ class SeleniumHelper:
         self.confirm_presence_of_element_by_xpath(locator)
         element = self.driver.find_element(By.XPATH, locator)
         return element.text
+    
+    def get_disabled_element_text_by_xpath(self, locator: str) -> str:
+        """
+        Get disabled web element text using the provided XPATH locator.
+
+        Args:
+            locator: The XPATH locator string for the disabled element.
+        
+        Returns:
+            Disabled web element text
+        """
+
+        self.confirm_presence_of_element_by_xpath(locator)
+        element = self.driver.find_element(By.XPATH, locator)
+        text = element.get_attribute('value')
+        return text
 
     def click_element(self, locator: str) -> None:
         """
