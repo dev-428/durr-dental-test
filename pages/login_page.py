@@ -1,4 +1,5 @@
 from helpers.selenium_helper import SeleniumHelper
+from pages.base_page import BasePage
 
 
 # locators
@@ -24,7 +25,7 @@ TERMS_AND_CONDITIONS_BUTTON_LOCATOR = "//button[contains(text(), 'Terms and Cond
 DATA_PROTECTION_LINK_LOCATOR = "//a[contains(text(), 'Data Protection')]"
 
 
-class LoginPage():
+class LoginPage(BasePage):
 
     def __init__(self, driver):
         self.driver = driver
@@ -33,7 +34,7 @@ class LoginPage():
     
     def _verify_page_elements(self) -> None:
         """
-        Verify page elements are present.s
+        Verify page elements are present.
         """
         
         self.helper.confirm_presence_of_element_by_xpath(PICTURE_TEXT_LOCATOR)

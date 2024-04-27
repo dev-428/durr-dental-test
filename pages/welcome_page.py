@@ -1,4 +1,5 @@
 from helpers.selenium_helper import SeleniumHelper
+from pages.base_page import BasePage
 
 
 # locators
@@ -7,7 +8,7 @@ VISTASOFT_MONITOR_LINK_LOCATOR = "//a[contains(text(), 'VistaSoft Monitor')]"
 LOGIN_BUTTON_LOCATOR = "//button/span/span[contains(text(), 'Login')]"
 
 
-class WelcomePage():
+class WelcomePage(BasePage):
     
     def __init__(self, driver):
         self.driver = driver
