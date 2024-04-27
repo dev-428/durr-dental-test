@@ -54,3 +54,19 @@ class SeleniumHelper:
         self.confirm_presence_of_element_by_xpath(locator)
         element = self.confirm_element_is_clickable_by_xpath(locator)
         element.click()
+
+    def fill_element_with_text(self, locator: str, text: str) -> None:
+        """
+        Fills a web element with the provided text using the given locator.
+
+        Args:
+            locator: The XPATH locator string for the element.
+            text: The text to enter into the element.
+        
+        Returns:
+            None
+        """
+        
+        element = self.confirm_presence_of_element_by_xpath(locator)
+        element.send_keys(text)
+    
