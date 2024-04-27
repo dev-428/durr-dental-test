@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-WEB_DRIVER_WAIT_TIMEOUT = 10
+WEB_DRIVER_WAIT_TIMEOUT = 30
 
 
 class SeleniumHelper:
@@ -40,9 +40,24 @@ class SeleniumHelper:
 
         return self.wait.until(EC.element_to_be_clickable((By.XPATH, locator)))
     
+    def get_element_text_by_xpath(self, locator: str) -> str:
+        """
+        Get web element text using the provided XPATH locator.
+
+        Args:
+            locator: The XPATH locator string for the element.
+
+        Returns:
+            Web element text
+        """
+
+        self.confirm_presence_of_element_by_xpath(locator)
+        element = self.driver.find_element(By.XPATH, locator)
+        return element.text
+
     def click_element(self, locator: str) -> None:
         """
-        Clicks on a web element located using the provided XPATH locator.
+        Clicks on a web element locator using the provided XPATH locator.
 
         Args:
             locator: The XPATH locator string for the element.
