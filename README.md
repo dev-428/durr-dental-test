@@ -64,21 +64,9 @@ Run following command in terminal:
 
 `pip install -r requirements.txt`
 
-### 4. Install Behave
+### 4. Set Email & Password
 
-Run following command in terminal:
-
-`pip install behave`
-
-### 5. Install Selenium
-
-Run following command in terminal:
-
-`pip install selenium`
-
-### 6. Fill Email & Password
-
-Navigate to `behave.ini` and copy paste your email & password in their respective fields.
+Navigate to `config.env` and fill in your email and password.
 
 # Common Errors Faced & Solutions
 
