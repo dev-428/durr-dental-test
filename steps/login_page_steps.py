@@ -1,15 +1,20 @@
+import os
 from pages.login_page import LoginPage
 from behave import given, when, then
+from dotenv import load_dotenv
 
 
-@then("I fill my email and password on the login page")
-def fill_email_and_password_on_login_page(context):
-    email = context.config.userdata.get('email')
-    password = context.config.userdata.get('password')
+load_dotenv("config.env")
+LARRY_USER_EMAIL = os.getenv("LARRY_USER_EMAIL")
+LARRY_USER_PASSWORD = os.getenv("LARRY_USER_PASSWORD")
 
+
+@then("I login as user Larry on the login page")
+def login_as_user_larry(context):
     login_page = LoginPage(context.driver)
-    login_page.fill_email_field(email)
-    login_page.fill_password_field(password)
+    login_page.fill_email_field(LARRY_USER_EMAIL)
+    login_page.fill_password_field(LARRY_USER_PASSWORD)
+
 
 @then("I click on the LOG-IN button on the login page")
 def click_login_button_login_page(context):
